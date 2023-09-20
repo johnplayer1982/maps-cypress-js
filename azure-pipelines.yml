@@ -16,6 +16,6 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    yarn install
+    yarn add cypress --dev
     yarn cypress run
   displayName: 'Run Cypress'
