@@ -1,8 +1,8 @@
-describe('description', () => {
+describe('Visiting the MaPS Corporate site', () => {
     beforeEach(() => {
 
     })
-    it('does_something', () => {
+    it('Visits the MaPS site', () => {
         cy.visit('https://www.maps.org.uk')
     })
 })
