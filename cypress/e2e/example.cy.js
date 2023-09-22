@@ -1,7 +1,8 @@
 describe('Visiting the MaPS Corporate site', () => {
     beforeEach(() => {
+        baseUrl = Cypress.env('BASEURL')
         cy.setBreakPoint('mobile')
-        cy.visit('/')
+        cy.visit(`${baseUrl}/`)
         cy.get('a[data-button-type="accept-all"]').click()
     })
     it('Visits the MaPS site', () => {
