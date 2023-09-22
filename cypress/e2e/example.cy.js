@@ -1,8 +1,12 @@
 describe('Visiting the MaPS Corporate site', () => {
     beforeEach(() => {
-
+        cy.setBreakPoint('mobile')
+        cy.visit('https://www.maps.org.uk')
+        cy.get('a[data-button-type="accept-all"]').click()
     })
     it('Visits the MaPS site', () => {
-        cy.visit('https://www.maps.org.uk')
+        cy.elementHasAttribute('a.mobile-navigation-toggle', 'aria-expanded', 'false')
+        cy.get('a.mobile-navigation-toggle').click()
+        cy.elementHasAttribute('a.mobile-navigation-toggle', 'aria-expanded', 'true')
     })
 })
