@@ -1,7 +1,7 @@
 describe('Visiting the MaPS Corporate site', () => {
     beforeEach(() => {
         cy.setBreakPoint('mobile')
-        cy.visit('https://www.maps.org.uk')
+        cy.visit('/')
         cy.get('a[data-button-type="accept-all"]').click()
     })
     it('Visits the MaPS site', () => {
