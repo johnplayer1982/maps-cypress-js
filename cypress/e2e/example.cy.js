@@ -1,6 +1,7 @@
 describe('Visiting the MaPS Corporate site', () => {
     beforeEach(() => {
         const baseUrl = Cypress.env('BASEURL')
+        // const baseUrl = 'https://www.maps.org.uk'
         cy.setBreakPoint('mobile')
         cy.visit(`${baseUrl}/`)
         cy.get('a[data-button-type="accept-all"]').click()
@@ -9,5 +10,6 @@ describe('Visiting the MaPS Corporate site', () => {
         cy.elementHasAttribute('a.mobile-navigation-toggle', 'aria-expanded', 'false')
         cy.get('a.mobile-navigation-toggle').click()
         cy.elementHasAttribute('a.mobile-navigation-toggle', 'aria-expanded', 'true')
+        cy.get('a.this-will-fail').should('contain.text', 'There is no spoon')
     })
 })
