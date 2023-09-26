@@ -10,6 +10,5 @@ describe('Visiting the MaPS Corporate site', () => {
         cy.elementHasAttribute('a.mobile-navigation-toggle', 'aria-expanded', 'false')
         cy.get('a.mobile-navigation-toggle').click()
         cy.elementHasAttribute('a.mobile-navigation-toggle', 'aria-expanded', 'true')
-        cy.get('a.this-will-fail').should('contain.text', 'There is no spoon')
     })
 })
