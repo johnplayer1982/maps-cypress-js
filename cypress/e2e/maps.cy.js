@@ -1,8 +1,8 @@
 describe('Visiting the MaPS Corporate site', () => {
     beforeEach(() => {
-        // const baseUrl = Cypress.env('MAPS_BASEURL')
-        const baseUrl = 'https://qa.maps.org.uk'
-        cy.visit(`${baseUrl}/`)
+        // const mapsBaseUrl = Cypress.env('MAPS_BASEURL')
+        const mapsBaseUrl = 'https://qa.maps.org.uk'
+        cy.visit(`${mapsBaseUrl}/`)
         cy.get('a[data-button-type="accept-all"]').click()
     })
     it('MaPS Navigation', () => {
@@ -27,10 +27,8 @@ describe('Visiting the MaPS Corporate site', () => {
                 })
             })
         })
-
         cy.clickButtonByIndex('a.mobile-navigation-toggle', 0)        
         cy.elementShouldNotBeVisible('nav.cmp-main-menu')
         cy.setBreakPoint('desktop')
-        
     })
 })
